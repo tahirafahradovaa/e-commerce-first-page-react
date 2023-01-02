@@ -77,9 +77,12 @@ function Information() {
           </Button>
           <Button
             onClick={() => {
-              setPrice([...price, count]);
-              setAdd(true);
-              setCount(0);
+              if (count == 0) {
+              } else {
+                setPrice([...price, count]);
+                setAdd(true);
+                setCount(0);
+              }
             }}
             _hover={{
               backgroundColor: "hsl(26, 90%, 65%)",

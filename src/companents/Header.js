@@ -175,6 +175,7 @@ function Header({ isLargerThan1280 }) {
 
       {show ? (
         <Box
+          zIndex={100}
           borderRadius={"20px"}
           top={"80px"}
           right={5}

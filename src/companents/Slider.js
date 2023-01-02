@@ -6,24 +6,25 @@ import SecondImage from "../imgs/image-product-2.jpg";
 import ThirdImage from "../imgs/image-product-3.jpg";
 import FourthImage from "../imgs/image-product-4.jpg";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 function Slider() {
   return (
-    <Image borderRadius={"25px"} p={2} boxSize={"400px"} src={MainImage} />
+    <Carousel>
+      <div>
+        <img src={MainImage} />
+      </div>
+      <div>
+        <img src={SecondImage} />
+      </div>
+      <div>
+        <img src={ThirdImage} />
+      </div>
+      <div>
+        <img src={FourthImage} />
+      </div>
+    </Carousel>
   );
 }
 
 export default Slider;
-{
-  /* <Box>
-  <Provider>
-    {" "}
-    <Carousel gap={50}>
-      <Image src={MainImage} />
-      <Image src={PicTwo} />
-      <Image src={PicThree} />
-      <LeftButton />
-      <RightButton />
-    </Carousel>
-  </Provider>
-</Box>; */
-}
