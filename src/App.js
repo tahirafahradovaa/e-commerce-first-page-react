@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import theme from "./companents/theme";
+import { ChakraProvider, useMediaQuery } from "@chakra-ui/react";
+
+import Header from "./companents/Header";
+import Maincontainer from "./companents/Maincontainer";
+import { useState } from "react";
 
 function App() {
+  const [isLargerThan1280] = useMediaQuery("(min-width: 660px)");
+  const [count, setCount] = useState(1);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Header isLargerThan1280={isLargerThan1280}></Header>
+      <Maincontainer isLargerThan1280={isLargerThan1280} />
+    </ChakraProvider>
   );
 }
 
